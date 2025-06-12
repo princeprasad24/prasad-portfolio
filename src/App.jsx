@@ -7,6 +7,7 @@ import { Home } from "./assets/Components/Home";
 import { About } from "./assets/Components/About";
 import { Projects } from "./assets/Components/Projects";
 import { Contact } from "./assets/Components/Contact";
+import { ErrorPage } from "./assets/Components/ErrorPage";
 
 import { useState, useEffect } from "react";
 
@@ -16,6 +17,11 @@ function App() {
   const [currentSection, setCurrentSection] = useState(
     window.location.hash || "#home"
   );
+
+
+  const section = currentSection.startsWith("#")
+    ? currentSection.slice(1)
+    : currentSection;
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -49,7 +55,7 @@ function App() {
         {currentSection !== "#home" &&
           currentSection !== "#about" &&
           currentSection !== "#projects" &&
-          currentSection !== "#contact" && <div>404 - Page Not Found</div>}
+          currentSection !== "#contact" && <ErrorPage section={section} />}
       </div>
     </>
   );
