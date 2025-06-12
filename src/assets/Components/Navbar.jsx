@@ -7,13 +7,13 @@ export const Navbar = ({ mobileView, setMobileView, setTheme }) => {
 
   const changeMode = () => {
     setDarkMode((prev) => !prev);
-    setTheme((prev) => !prev); // Toggle global theme
+    setTheme((prev) => !prev); 
   };
 
   useEffect(() => {
     document.body.style.overflow = mobileView ? "hidden" : "";
 
-    // Apply the dark mode class to the body element
+    
     if (darkMode) {
       document.body.classList.add("dark");
     } else {

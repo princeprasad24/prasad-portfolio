@@ -37,7 +37,7 @@ function App() {
           setMobileView={setMobileView}
           setTheme={getTheme}
         />
-        <MobileMenu mobileView={mobileView} setMobileView={setMobileView} />
+        <MobileMenu mobileView={mobileView} setMobileView={setMobileView} setTheme={getTheme} />
         <Home getTheme={darkMode} />
         <About getTheme={darkMode} />
         <Projects getTheme={darkMode} />
