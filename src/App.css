@@ -1,0 +1,68 @@
+@import "tailwindcss";
+@import "@fontsource/source-sans-pro/600.css";
+
+
+::selection {
+  background-color: rgb(241, 242, 242);
+  color: #000;
+  text-shadow: 1px 1px 4px gray;
+  opacity: 0.9;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  /* font-family: "Space Grotest", sans-serif; */
+  font-family: "Share Tech Mono", monospace;
+  background-color: #0a0a0a;
+  color: #f3f4f6;
+}
+
+h1{
+  font-family: "Share Tech Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+
+@keyframes slideTop {
+ 
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+  
+}
+
+.animate-loading-bar {
+  animation: loading 0.8s ease infinite;
+}
+.animate-blink {
+  animation: blink 0.8s step-end infinite;
+}
+
+.animation-slide{
+
+  animation: slideTop 3s ease;
+}
