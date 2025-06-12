@@ -24,7 +24,7 @@ Hi! I'm **Prasad**, a passionate web developer with a strong focus on building r
 ### 1. **Portfolio Website**
    - **Description**: A personal portfolio to showcase my web development skills and projects. It includes a clean design and smooth transitions using TailwindCSS.
    - **Technologies**: React, Vite, TailwindCSS
-   - **Link**: [Live Demo](https://yourwebsite.com)
+   - **Link**: [Live Demo](https://princeprasad24.github.io/prasad-portfolio/)
 
 ### 2. **Gaming Website**
    - **Description**: An interactive website that offers fun mini-games such as Memory Game, Rock-Paper-Scissors, Tic-Tac-Toe, and more. Designed to provide a playful and engaging user experience.
@@ -46,10 +46,3 @@ Hi! I'm **Prasad**, a passionate web developer with a strong focus on building r
    - **Technologies**: HTML, CSS, React
    - **Link**: [Live Demo](https://vdp-todo-list.vercel.app/)
 
-## 📝 Installation Instructions
-
-If you'd like to clone and run this project locally, follow the steps below:
-
-### 1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/your-portfolio.git

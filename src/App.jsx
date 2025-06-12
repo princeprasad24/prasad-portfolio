@@ -8,32 +8,13 @@ import { About } from "./assets/Components/About";
 import { Projects } from "./assets/Components/Projects";
 import { Contact } from "./assets/Components/Contact";
 import { ErrorPage } from "./assets/Components/ErrorPage";
+import { Footer } from "./assets/Components/Footer";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const [mobileView, setMobileView] = useState(false);
-  const [currentSection, setCurrentSection] = useState(
-    window.location.hash || "#home"
-  );
-
-
-  const section = currentSection.startsWith("#")
-    ? currentSection.slice(1)
-    : currentSection;
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      setCurrentSection(window.location.hash || "#home");
-    };
-
-    window.addEventListener("hashchange", handleHashChange);
-
-    return () => {
-      window.removeEventListener("hashchange", handleHashChange);
-    };
-  }, []);
 
   return (
     <>
@@ -45,17 +26,11 @@ function App() {
       >
         <Navbar mobileView={mobileView} setMobileView={setMobileView} />
         <MobileMenu mobileView={mobileView} setMobileView={setMobileView} />
-
-
-        {currentSection === "#home" && <Home />}
-        {currentSection === "#about" && <About />}
-        {currentSection === "#projects" && <Projects />}
-        {currentSection === "#contact" && <Contact />}
-
-        {currentSection !== "#home" &&
-          currentSection !== "#about" &&
-          currentSection !== "#projects" &&
-          currentSection !== "#contact" && <ErrorPage section={section} />}
+        <Home />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
       </div>
     </>
   );

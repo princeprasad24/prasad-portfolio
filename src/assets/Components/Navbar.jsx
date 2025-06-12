@@ -18,7 +18,7 @@ export const Navbar = ({ mobileView, setMobileView }) => {
           >
             &#9776;
           </div>
-
+ 
           <div className="hidden  md:flex items-center space-x-8">
             {/* hover:border hover:border-white hover:outline-2 */}
             <a

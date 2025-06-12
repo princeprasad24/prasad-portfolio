@@ -1,34 +1,37 @@
 import { useEffect } from "react";
+import { RevealOnScroll } from "../RevealOnScroll";
 
 export const Home = () => {
+  useEffect(() => {
+    document.title = "Prasad Portfolio - Home";
+  });
 
-  useEffect(()=>{
-    document.title = "Prasad Protfolio - Home"
-  })
   return (
-    <section
-      id="home"
-      className="min-h-screen flex items-center relative bg-black animation-slide bg-gradient-to-t from-gray-900 to-black"
-    >
-      <div className="z-10 px-6 w-full max-w-4xl md:px-10">
-        <h1 className="text-5xl pl-3 md:text-7xl font-extrabold mb-6 border-b-4 border-white pb-4 leading-tight text-white drop-shadow-md text-left">
-          Hi, I'm Prasad
-        </h1>
+    <RevealOnScroll>
+      <section
+        id="home"
+        className="min-h-screen flex items-center justify-center relative bg-gradient-to-t from-white-900 via-black to-black overflow-hidden"
+      >
+        <div className="z-10 px-4 w-full max-w-5xl md:px-10 text-center">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-white leading-tight drop-shadow-xl md:max-w-2xl mx-auto">
+            Hi, I'm Prasad
+          </h1>
 
-        <p className="text-gray-300 pl-5 text-lg md:text-xl mb-12 max-w-3xl leading-relaxed text-left">
-          I'm a frontend developer — a passionate front-end developer focused on
-          building engaging, user-friendly web experiences.
-        </p>
+          <p className="text-gray-300 text-lg md:text-xl mb-12 mx-auto max-w-3xl leading-relaxed">
+            I'm a Web developer — passionate about building engaging,
+            user-friendly web experiences with clean, performant code.
+          </p>
 
-        <div className="flex justify-start space-x-6">
-          <a
-            href="#projects"
-            className="border border-white hover:border-black hover:bg-white hover:text-black ml-7  flex  gap-3 items-center transition-colors duration-300 text-white py-3 px-10 rounded font-semibold shadow-lg transition-transform hover:shadow-white/30"
-          >
-            View Projects <span className="text-2xl">&rarr;</span>
-          </a>
+          <div className="flex justify-center">
+            <a
+              href="#projects"
+              className="border border-white hover:border-black hover:bg-white hover:text-black py-3 px-8 md:px-12 text-white rounded-lg font-semibold shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
+            >
+              View Projects <span className="text-2xl">&rarr;</span>
+            </a>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </RevealOnScroll>
   );
 };
