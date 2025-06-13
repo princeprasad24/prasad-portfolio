@@ -1,8 +1,28 @@
 import { useEffect, useState } from "react";
 
 export const LoadingScreen = ({ onComplete }) => {
-  const [text, setText] = useState("");
   const fullText = "<Hello World/>";
+  const fullLoading = "Loading.....";
+  
+  const [text, setText] = useState("");
+  // const [loading , setLoading] = useState("")
+
+
+
+  useEffect(() => {
+    let Loadingindex = 1;
+    const loadingInterval = setInterval(() => {
+      const title = fullLoading.substring(0, Loadingindex);
+      document.title = title;
+      Loadingindex++;
+
+      if (Loadingindex > fullLoading.length) {
+        clearInterval(loadingInterval);
+      }
+    }, 500);
+
+    return () => clearInterval(loadingInterval);
+  }, []);
 
   useEffect(() => {
     let index = 0;
@@ -17,7 +37,7 @@ export const LoadingScreen = ({ onComplete }) => {
           onComplete();
         }, 1000);
       }
-    }, 100);
+    }, 300);
  
     return () => clearInterval(interval);
   }, [onComplete]);

@@ -1,10 +1,7 @@
-import { useEffect } from "react";
 import { RevealOnScroll } from "../RevealOnScroll";
 
 export const About = ({ getTheme }) => {
-  useEffect(() => {
-    document.title = "Prasad Portfolio - About";
-  }, []);
+
 
   const SkillCard = ({ title, skills }) => (
     <div

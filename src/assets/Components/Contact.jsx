@@ -6,12 +6,11 @@ import {
   faLinkedin,
   faInstagram,
   faFacebook,
+  faGithub,
 } from "@fortawesome/free-brands-svg-icons";
 
 export const Contact = ({ getTheme }) => {
-  useEffect(() => {
-    document.title = "Prasad Portfolio - Contact";
-  }, []);
+
 
   const [fromData, setFromData] = useState({
     user_name: "",
@@ -201,6 +200,18 @@ export const Contact = ({ getTheme }) => {
                   } transition-transform transform hover:scale-110`}
                 >
                   <FontAwesomeIcon icon={faFacebook} size="2x" />
+                </a>
+                <a
+                  href="https://github.com/princeprasad24"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${
+                    getTheme
+                      ? "text-white hover:text-gray-300"
+                      : "text-black hover:text-gray-500"
+                  } transition-transform transform hover:scale-110`}
+                >
+                  <FontAwesomeIcon icon={faGithub} size="2x" />
                 </a>
               </div>
             </div>
