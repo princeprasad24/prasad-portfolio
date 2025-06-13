@@ -10,19 +10,24 @@ import { Contact } from "./assets/Components/Contact";
 import { ErrorPage } from "./assets/Components/ErrorPage";
 import { Footer } from "./assets/Components/Footer";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [loaded, setLoaded] = useState(false);
   const [mobileView, setMobileView] = useState(false);
 
-  const [darkMode , setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(true);
 
-  const getTheme = (theme)=>{
+  useEffect(() => {
+    const themeColor = document.getElementById("themeColor");
+    if (themeColor) {
+      themeColor.setAttribute("content", darkMode ? "#000000" : "#ffffff");
+    }
 
-    setDarkMode(theme);
-  }
+  }, [darkMode]);
+  
 
+ 
   return (
     <>
       {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
@@ -35,9 +40,17 @@ function App() {
         <Navbar
           mobileView={mobileView}
           setMobileView={setMobileView}
-          setTheme={getTheme}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
         />
-        <MobileMenu mobileView={mobileView} setMobileView={setMobileView} setTheme={getTheme} />
+
+        <MobileMenu
+          mobileView={mobileView}
+          setMobileView={setMobileView}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />
+
         <Home getTheme={darkMode} />
         <About getTheme={darkMode} />
         <Projects getTheme={darkMode} />

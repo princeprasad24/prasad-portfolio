@@ -13,7 +13,7 @@ export const Footer = ({ getTheme }) => {
             getTheme ? "text-gray-400" : "text-gray-600"
           } pt-3 mb-4`}
         >
-          &copy; {new Date().getFullYear()} Prasad Gaikawad. All rights
+          &copy; {new Date().getFullYear()} Prasad Gaikawada. All rights
           reserved.
         </p>
       </footer>

@@ -37,7 +37,7 @@ export const Projects = ({ getTheme }) => {
     <RevealOnScroll>
       <section
         id="projects"
-        className={`min-h-screen flex items-center py-20 px-6 md:px-12 animation-slide ${
+        className={`scroll-mt-20 min-h-screen flex items-center py-20 px-6 md:px-12 animation-slide ${
           getTheme
             ? "bg-gradient-to-t from-white-900 to-black"
             : "bg-gradient-to-t from-black-900 to-white"

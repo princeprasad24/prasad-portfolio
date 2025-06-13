@@ -1,14 +1,9 @@
-import {  useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
-export const MobileMenu = ({ mobileView, setMobileView, setTheme }) => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const changeMode = () => {
-    setDarkMode((prev) => !prev);
-    setTheme((prev) => !prev);
-  };
+export const MobileMenu = ({ mobileView, setMobileView, darkMode, setDarkMode }) => {
+  const changeMode = () => setDarkMode((prev) => !prev);
+  
 
   return (
     <div
@@ -66,7 +61,10 @@ export const MobileMenu = ({ mobileView, setMobileView, setTheme }) => {
       </a>
 
       <div
-        onClick={changeMode }
+        onClick={() => {
+          changeMode();
+          setMobileView(false);
+        }}
         className={`mt-4 p-2 cursor-pointer rounded-full transition-colors duration-200
                     ${
                       darkMode
@@ -74,7 +72,7 @@ export const MobileMenu = ({ mobileView, setMobileView, setTheme }) => {
                         : "text-gray-300 bg-gray-800"
                     }`}
       >
-        {darkMode ? "Light Theme" : "Dark Mode"}{" "}
+        {darkMode ? "Light Theme" : "Dark Mode"}
         <FontAwesomeIcon
           icon={darkMode ? faSun : faMoon}
           className="text-2xl"
